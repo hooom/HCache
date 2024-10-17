@@ -3,8 +3,8 @@
 ![Overview](./img/hcache.png)
 
 ## Prepare
-Install Redis, please see [Install Doc](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
-Install RabitMQ, please see [Install Doc](https://www.rabbitmq.com/docs/download)
+* Install Redis, please see [Install Doc](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
+* Install RabitMQ, please see [Install Doc](https://www.rabbitmq.com/docs/download)
 
 
 ## Usage
