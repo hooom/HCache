@@ -19,6 +19,7 @@ step 3: nohup python3 url_wcp_test.py > result.log &
 This framework is based on our latest research,"Internet’s Invisible Enemy: Detecting and Measuring Web Cache Poisoning in the Wild", accepted at CCS '24.
 
 If you want to cite us, please use the following (BibTeX) reference:
+```
 @INPROCEEDINGS {,
     author = {Y. Liang and J. Chen and R. Guo and K. Shen and H. Jiang and M. Hou and Y. Yu and H. Duan},
     booktitle = {CCS ’24},
@@ -33,7 +34,7 @@ If you want to cite us, please use the following (BibTeX) reference:
     address = {Salt Lake City, UT, USA},
     month = {october}
 }
-
+```
 
 
 ## Disclaimer
