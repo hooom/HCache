@@ -8,10 +8,10 @@ Install RabitMQ, please see [Install Doc](https://www.rabbitmq.com/docs/download
 
 
 ## Usage
-step 0: pip3 install -r requirements.txt
-step 1: python3 url_seed_init.py top-1m.csv
-step 2: nohup python3 url_extend.py > extend.log & 
-step 3: nohup python3 url_wcp_test.py > result.log &
+* step 0: pip3 install -r requirements.txt
+* step 1: python3 url_seed_init.py top-1m.csv
+* step 2: nohup python3 url_extend.py > extend.log & 
+* step 3: nohup python3 url_wcp_test.py > result.log &
 
 
 
