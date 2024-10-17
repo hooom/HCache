@@ -1,0 +1,19 @@
+{
+    "rabitmq": {
+        "heartbeat": 0,
+        "host": "your rabitmq server",
+        "port": 5672,
+        "virtual_host": "/",
+        "username": "rabitmq user",
+        "password": "rabitmq password",
+        "url_find_queue": "url_extend",
+        "url_wcp_queue": "url_final",
+        "url_result_queue": "url_result"
+    },
+    "redis": {
+        "host": "your redis server",
+        "port": 6379,
+        "password": "server password"
+    },
+    "mutation_func": ["mutation_cpdos_HMC", "mutation_cpdos_HHO", "mutation_cpdos_HMO", "mutation_cpdos_HTTP_Forwarded_headers", "mutation_cpdos_HTTP_Protocol_headers", "mutation_cpdos_Range", "mutation_cpdos_If", "mutation_cpdos_upgrade", "mutation_cpdos_identify", "mutation_cpdos_cdn", "mutation_cpdos_transfer_encoding", "mutation_fat_get", "mutation_black_list", "mutation_cpdos_Other_headers"]
+}

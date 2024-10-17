@@ -1,0 +1,2 @@
+pt>alert(1)</script>
+.burpcollaborator.net
