@@ -5,7 +5,7 @@
 ## Prepare
 * Install Redis, please see [Install Doc](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
 * Install RabitMQ, please see [Install Doc](https://www.rabbitmq.com/docs/download)
-
+* config config.json
 
 ## Usage
 * step 0: pip3 install -r requirements.txt
