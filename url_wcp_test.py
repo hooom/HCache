@@ -7,11 +7,11 @@ import requests, aiohttp
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import random, socket, asyncio
 from concurrent.futures import ProcessPoolExecutor
-import http.client
+#import http.client
 from concurrent.futures import as_completed
 import multiprocessing
-http.client.HTTPConnection._http_vsn = 10
-http.client.HTTPConnection._http_vsn_str = 'HTTP/1.0'
+#http.client.HTTPConnection._http_vsn = 10
+#http.client.HTTPConnection._http_vsn_str = 'HTTP/1.0'
 
 
 
@@ -66,23 +66,23 @@ async def wcpdetection(scan_ts, url, round, domain, rank, func, ch, aheaders = {
                                 'rank': rank, 'func':func, 'ip': ip_address, 'scan_ts': scan_ts, 'round': round}
                 ch.basic_publish(
                     exchange='',
-                    routing_key=config['rabitmq']['url_result_queue'],  # 告诉rabbitmq将消息发送到 url_roll 队列中
+                    routing_key=config['rabitmq']['url_result_queue'],  # 告诉rabbitmq将消息发送到 url_result 队列中
                     body=json.dumps(data),  # 发送消息的内容
                     properties=pika.BasicProperties(delivery_mode=2, )  # 消息持久化
                 )
 
-            if ('Content-Length' in attack_response and 'Content-Length' in normal_response) and \
-                    normal_response.headers['Content-Length'] != attack_response.headers['Content-Length']:
+            if ('Content-Length' in attack_response.headers and 'Content-Length' in normal_response.headers) and \
+                    normal_response.headers.get('Content-Length') != attack_response.headers.get('Content-Length'):
                 for value in aheaders.values():
-                    if value in attack_response.content:
+                    if value in attack_response.content.decode('utf-8'):
                         verify_response = s.get(url = url, headers=headers, params=p1 ,verify=False, timeout=25)
-                        if value in verify_response.content:
+                        if value in verify_response.content.decode('utf-8'):
                             data = {'url': url, 'payload': aheaders, 'response': attack_response.status_code, \
                                             'raw_domain': domain, 'rank': rank, 'func':func, 'ip': ip_address, \
                                             'scan_ts': scan_ts, 'round': round}
                             ch.basic_publish(
                                 exchange='',
-                                routing_key=config['rabitmq']['url_result_queue'],  # 告诉rabbitmq将消息发送到 url_roll 队列中
+                                routing_key=config['rabitmq']['url_result_queue'],  # 告诉rabbitmq将消息发送到 url_result 队列中
                                 body=json.dumps(data),  # 发送消息的内容
                                 properties=pika.BasicProperties(delivery_mode=2, )  # 消息持久化
                             )
